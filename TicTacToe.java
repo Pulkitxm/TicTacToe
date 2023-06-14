@@ -38,25 +38,26 @@ public class TicTacToe {
         while (!gameOver && count <9){
             printBoard(board);
             if (c=='O'){
-                System.out.println("Turn for X");
-                System.out.print("Enter row - ");
-                row = sc.nextInt();
-                System.out.print("Enter column - ");
-                col = sc.nextInt();
-
-                board[row][col] = 'O';
-                c = 'X';
+                 System.out.println("Turn for X");
             } else{
-                System.out.println("Turn for O");
-                System.out.print("Enter row - ");
-                row = sc.nextInt();
-                System.out.print("Enter column - ");
-                col = sc.nextInt();
-
-                board[row][col] = 'X';
-                c = 'O';
+                System.out.println("Turn for Y");
             }
-            count++;
-        }
+            System.out.print("Enter row - ");
+            row = sc.nextInt();
+            System.out.print("Enter column - ");
+            col = sc.nextInt();
+            if (board[row][col] == ' '){
+                count++;
+
+            } else{
+                System.out.println("\nInvalid move");
+                continue;
+            }
+
+
+            board[row][col] = c;
+            c= (c=='X') ? 'Y':'X';
+
+        }   
     }
 }
