@@ -45,9 +45,16 @@ public class TicTacToe {
             
             
             board[row][col] = c;
+            gameOver = haveWon(board,c);
+
+            if (gameOver){
+                System.out.println("Player "+c+" Won");
+                break;
+            }else{
+                c= (c=='X') ? 'O':'X';
+            }
             
             
-            c= (c=='X') ? 'Y':'X';
             
         }   
     }
@@ -67,4 +74,7 @@ public class TicTacToe {
         System.out.println(" |___|_______|");
     }
     
+    public static boolean haveWon(char[][] board , char c) {
+        return true ;
+    }
 }
